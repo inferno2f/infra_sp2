@@ -1,5 +1,4 @@
 import os
-import django.db.backends.postgresql as postgres
 from datetime import timedelta
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -58,7 +57,7 @@ WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': postgres,  # заменить на os.getenv('DB_ENGINE')
+        'ENGINE': django.db.backends.postgresql,  # заменить на os.getenv('DB_ENGINE')
         'NAME': os.getenv('DB_NAME'),
         'USER': os.getenv('POSTGRES_USER'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
